@@ -34,10 +34,16 @@ template — **not** website content.
 
 ## The data
 
-All state plans are public agency releases (CC-BY-4.0) reprocessed by the Boettiger Lab. Each state's
-collections are children of a state parent collection (`cdfw-datasets`, `nevada-datasets`,
-`missouri-datasets`) — **not** the root catalog — so each entry in `layers-input.json` sets an explicit
-`collection_url` to the sub-collection JSON to bypass root-catalog traversal.
+All state plans are public agency releases reprocessed by the Boettiger Lab. Each state's collections
+are children of a state parent collection (`cdfw-datasets`, `nevada-datasets`, `missouri-datasets`) —
+**not** the root catalog — so each entry in `layers-input.json` sets an explicit `collection_url` to the
+sub-collection JSON to bypass root-catalog traversal. Ingestion + authoritative sources are documented in
+data-workflows issues **#381** (CA SWAP 2025), **#383** (NV SWAP 2022), **#384** (MO CCS 2022).
+
+> **Licenses:** California is **CC-BY-4.0**; the STAC declares **Nevada and Missouri as `"other"` —
+> redistribution license pending confirmation** (both held out of source.coop). Do not describe NV/MO
+> data as CC-BY. Sources: NV → [NDOW ArcGIS Data Hub](https://nevada-department-of-wildlife-data-hub-ndow.hub.arcgis.com/);
+> MO → MDC ArcGIS `gisblue.mdc.mo.gov/.../CCS/MapServer` + the [2022 CCS PDF](https://mdc.mo.gov/sites/default/files/2022-04/2022-Missouri-CCS.pdf).
 
 **California — SWAP 2025 (CDFW)**, bucket `public-cdfw/swap-2025/`:
 

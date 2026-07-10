@@ -30,11 +30,14 @@ are loaded from CDN, so there is no JavaScript to write here.
 
 ## Data & attribution
 
-State plan data © the respective agencies, licensed CC-BY-4.0 — California Department of Fish and
-Wildlife ([SWAP 2025](https://wildlife.ca.gov/SWAP)), Nevada Department of Wildlife
-([SWAP 2022](https://www.ndow.org/species/state-wildlife-action-plan/)), and Missouri Department of
-Conservation ([CCS 2022](https://mdc.mo.gov)). Cloud-native reprocessing by the
-[Boettiger Lab](https://boettigerlab.berkeley.edu), UC Berkeley.
+State plan data © the respective agencies, reprocessed to cloud-native formats by the
+[Boettiger Lab](https://boettigerlab.berkeley.edu), UC Berkeley:
+
+- **California — SWAP 2025**, California Department of Fish and Wildlife — **CC-BY-4.0** ([wildlife.ca.gov/SWAP](https://wildlife.ca.gov/SWAP)).
+- **Nevada — SWAP 2022**, Nevada Department of Wildlife — license **pending confirmation**; source [NDOW ArcGIS Data Hub](https://nevada-department-of-wildlife-data-hub-ndow.hub.arcgis.com/).
+- **Missouri — CCS 2022**, Missouri Department of Conservation — license **pending confirmation**; source [2022 Missouri CCS](https://mdc.mo.gov/sites/default/files/2022-04/2022-Missouri-CCS.pdf) (MDC ArcGIS COA services).
+
+Ingestion is tracked in data-workflows issues [#381](https://github.com/boettiger-lab/data-workflows/issues/381) (CA), [#383](https://github.com/boettiger-lab/data-workflows/issues/383) (NV), and [#384](https://github.com/boettiger-lab/data-workflows/issues/384) (MO). NV/MO are held out of source.coop until licenses are resolved.
 
 ## Deployment
 
