@@ -34,7 +34,7 @@ There is **no shared species key or taxonomy across states.** A cross-state spec
 
 ## National context layers
 
-Alongside the state plans the app carries US-wide reference layers: **PAD-US 4.1** protected areas (fee lands and easements, colored by GAP status 1–4), **NLCD 2024** land cover, **SVI 2022** social vulnerability at census-tract level, and **US Census** administrative boundaries (states, counties, congressional districts, state legislative upper/lower). Use these for context and overlays with any state's plan.
+Alongside the state plans the app carries US-wide reference layers: **PAD-US 4.1** protected areas (fee lands and easements, colored by GAP status 1–4), **NLCD 2024** land cover, the **National Wetlands Inventory (NWI)** (USFWS wetland features colored by `WETLAND_TYPE`), **SVI 2022** social vulnerability at census-tract level, and **US Census** administrative boundaries (states, counties, congressional districts, state legislative upper/lower). Use these for context and overlays with any state's plan.
 
 ## Map vs. SQL
 

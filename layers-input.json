@@ -545,6 +545,48 @@
             ]
         },
         {
+            "collection_id": "wetlands-nwi",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nwi-pmtiles",
+                    "display_name": "Wetlands — National Wetlands Inventory (NWI)",
+                    "group": "Wetlands (US)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "WETLAND_TYPE"],
+                            "Freshwater Emergent Wetland", "#7FC31C",
+                            "Freshwater Forested/Shrub Wetland", "#008837",
+                            "Freshwater Pond", "#A6D96A",
+                            "Estuarine and Marine Wetland", "#66C2A5",
+                            "Estuarine and Marine Deepwater", "#000080",
+                            "Lake", "#2B6CB0",
+                            "Lakes", "#2B6CB0",
+                            "Riverine", "#4FC3E8",
+                            "RIverine", "#4FC3E8",
+                            "Other", "#BDBDBD",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.6
+                    },
+                    "tooltip_fields": ["WETLAND_TYPE", "ATTRIBUTE", "state_code"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "Freshwater Emergent Wetland", "color": "#7FC31C" },
+                        { "label": "Freshwater Forested/Shrub Wetland", "color": "#008837" },
+                        { "label": "Freshwater Pond", "color": "#A6D96A" },
+                        { "label": "Estuarine & Marine Wetland", "color": "#66C2A5" },
+                        { "label": "Estuarine & Marine Deepwater", "color": "#000080" },
+                        { "label": "Lake", "color": "#2B6CB0" },
+                        { "label": "Riverine", "color": "#4FC3E8" },
+                        { "label": "Other", "color": "#BDBDBD" }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "svi-2022",
             "collection_url": "https://minio.carlboettiger.info/public-social-vulnerability/2022/stac-collection.json",
             "assets": [

@@ -76,7 +76,8 @@ data-workflows issues **#381** (CA SWAP 2025), **#383** (NV SWAP 2022), **#384**
 | `missouri-ccs-2022-priority-geographies` | ✅ | 11 landscape priorities; `NAME`, `GIS_Acres` |
 
 **National context** (reused, proven): `pad-us-4.1-fee`, `pad-us-4.1-easement` (GAP-status colored),
-`nlcd-2024` (categorical COG), `svi-2022` (tract-pmtiles), and `census-2024-{state,county,cd}` /
+`nlcd-2024` (categorical COG), `wetlands-nwi` (US National Wetlands Inventory PMTiles, colored by
+`WETLAND_TYPE`), `svi-2022` (tract-pmtiles), and `census-2024-{state,county,cd}` /
 `census-2025-{sldu,sldl}` (collapsed "Administrative Boundaries" group).
 
 > **Hex caveat:** each polygon layer has an H3 hex variant where one row = one (feature, cell) pair.
