@@ -27,7 +27,9 @@ These relationships tie the suite together — confirm the exact column names fi
 
 - Conservation Units → Provinces: `ParentProvinceID` → `ProvinceID`.
 - SGCN ranges → SGCN species list: `ParentSpeciesKey` → `SpeciesKey`.
-- Targets / Strategies reference Conservation Units by their **`Name`** (not an ID) — match on the name string.
+- SGCN × Conservation Unit crosswalk → species list: `ParentProvSpeciesKey` → `SpeciesKey`; its `ConUnit` column names the unit.
+- Conservation Targets → Conservation Units: by **name** — `targets.ConsUnit` matches `conservation-units.Name` (there is no ID join).
+- Conservation Strategies → Targets: `ParentTargetID` → `TargetID`. Strategies reach a conservation unit only *through* its target, not by a direct unit reference.
 - Both sides of a hex-to-hex spatial join must include `h0`, and join on `h8`.
 
 ## Hex / area pitfall

@@ -277,13 +277,13 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">SGCN Species List <span class="pill sql">SQL</span></div>
-            <div class="source">The full list of Species of Greatest Conservation Need identified in SWAP 2025, keyed by <code>SpeciesKey</code> for joins to the range polygons and the species × unit crosswalk.</div>
+            <div class="name">SGCN Species List <span class="pill">1,437 species</span> <span class="pill sql">SQL</span></div>
+            <div class="source">The full list of Species of Greatest Conservation Need in SWAP 2025, spanning all seven taxonomic groups — amphibians, birds, fish, invertebrates, mammals, plants, and reptiles (only the five vertebrate groups have mapped ranges). Each row carries the species' listing status, SGCN status, and a climate-vulnerability indicator. <code>SpeciesKey</code> is the join key to the range polygons and the species × unit crosswalk.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">SGCN × Conservation Unit <span class="pill sql">SQL</span></div>
-            <div class="source">Crosswalk table associating each SGCN species with the conservation units where it occurs — the basis for "which species are in this unit / which units hold this species" questions.</div>
+            <div class="name">SGCN × Conservation Unit <span class="pill">4,268 rows</span> <span class="pill sql">SQL</span></div>
+            <div class="source">Crosswalk recording which conservation units each SGCN species occurs in — the basis for "which species are in this unit / which units hold this species" questions. <code>ParentProvSpeciesKey</code> joins to the species list's <code>SpeciesKey</code>; <code>ConUnit</code> names the conservation unit.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species-units/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
@@ -305,13 +305,13 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     <div class="layer-group">
         <h3>Conservation Planning Tables</h3>
         <div class="layer">
-            <div class="name">Conservation Targets <span class="pill sql">SQL</span></div>
-            <div class="source">The habitats, species groups, and ecological features SWAP 2025 identifies for conservation action, referenced to conservation units by name.</div>
+            <div class="name">Conservation Targets <span class="pill">460 targets</span> <span class="pill sql">SQL</span></div>
+            <div class="source">The habitats and species systems SWAP 2025 identifies for conservation action, one set per conservation unit and typed as Terrestrial, Freshwater Aquatic, Marine, or Anadromous Species. Joins to the conservation units by name (<code>ConsUnit</code>); each target's <code>TargetID</code> is referenced by the strategies table.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/targets/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">Conservation Strategies <span class="pill sql">SQL</span></div>
-            <div class="source">The actions and approaches SWAP 2025 proposes to sustain its conservation targets, also referenced to conservation units by name.</div>
+            <div class="name">Conservation Strategies <span class="pill">525 actions</span> <span class="pill sql">SQL</span></div>
+            <div class="source">The conservation actions SWAP 2025 proposes to sustain its targets — each tied to the threat it addresses and grouped into strategy categories (Direct Management, Partner Engagement, Data Collection and Analysis, Law and Policy, Land Use Planning, Environmental Review, Outreach and Education, Management Planning). Joins to the targets via <code>ParentTargetID</code> → <code>TargetID</code>.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/strategies/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
