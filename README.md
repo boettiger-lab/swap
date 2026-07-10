@@ -1,24 +1,23 @@
-# California SWAP 2025
+# State Wildlife Action Plans Explorer
 
-An AI-powered interactive map for **California's State Wildlife Action Plan (SWAP) 2025** — the
-California Department of Fish and Wildlife (CDFW) conservation framework of provinces, conservation
-units, Species of Greatest Conservation Need (SGCN), and the strategies and targets that guide their
-recovery.
+An AI-powered interactive map for comparing **U.S. State Wildlife Action Plans** — how different
+states plan for wildlife conservation. It currently federates three deliberately different plans:
 
-Ask questions in plain language; the app uses an LLM agent with map tools and SQL access to visualize
-and analyze the data.
+- **California — SWAP 2025 (CDFW):** a relational plan — provinces → conservation units, SGCN species
+  + ranges, and Conservation Targets & Strategies planning tables.
+- **Nevada — SWAP 2022 (NDOW):** a flat, species-centric plan — 258 species distributions + 17 key
+  habitat classes.
+- **Missouri — CCS 2022 (MDC):** a habitat/place-based *Comprehensive Conservation Strategy* (not
+  called a "SWAP") — Conservation Opportunity Areas by habitat system + priority geographies, with no
+  species layer.
 
-Built on the [geo-agent](https://github.com/boettiger-lab/geo-agent) framework — the map, chat, and
-agent modules are loaded from CDN, so there is no JavaScript to write here.
+Each state's layers are kept in their **native structure** and labeled by state (`CA ·`, `NV ·`,
+`MO ·`) so users can see and manually compare the different approaches. US-wide context layers
+(PAD-US protected areas, NLCD land cover, SVI social vulnerability, Census boundaries) overlay any state.
 
-## Layers
-
-- **SWAP Regions** — Provinces (8), Conservation Units (46), Bay-Delta Conservation Unit
-- **Species of Greatest Conservation Need** — SGCN species ranges by taxonomic group
-- **Marine & Anadromous** — Marine Bioregions, salmonid ESU/DPS units
-
-Tabular planning data (SGCN species list, Conservation Targets, Conservation Strategies, and the
-SGCN × Conservation Unit crosswalk) is available to the agent via SQL.
+Ask questions in plain language; the app uses an LLM agent with map tools and SQL access. Built on the
+[geo-agent](https://github.com/boettiger-lab/geo-agent) framework — the map, chat, and agent modules
+are loaded from CDN, so there is no JavaScript to write here.
 
 ## Configuration
 
@@ -31,8 +30,10 @@ SGCN × Conservation Unit crosswalk) is available to the agent via SQL.
 
 ## Data & attribution
 
-California SWAP 2025, © California Department of Fish and Wildlife, licensed CC-BY-4.0
-([wildlife.ca.gov/SWAP](https://wildlife.ca.gov/SWAP)). Cloud-native reprocessing by the
+State plan data © the respective agencies, licensed CC-BY-4.0 — California Department of Fish and
+Wildlife ([SWAP 2025](https://wildlife.ca.gov/SWAP)), Nevada Department of Wildlife
+([SWAP 2022](https://www.ndow.org/species/state-wildlife-action-plan/)), and Missouri Department of
+Conservation ([CCS 2022](https://mdc.mo.gov)). Cloud-native reprocessing by the
 [Boettiger Lab](https://boettigerlab.berkeley.edu), UC Berkeley.
 
 ## Deployment

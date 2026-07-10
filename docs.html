@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — California SWAP 2025 Explorer</title>
+<title>About — State Wildlife Action Plans Explorer</title>
 <style>
 :root {
     --ink: #1a2e1f;
@@ -38,10 +38,7 @@ header.hero {
     padding: 3.5rem 1.5rem 2.5rem;
     border-bottom: 1px solid var(--rule);
 }
-.hero-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-}
+.hero-inner { max-width: var(--max); margin: 0 auto; }
 .hero h1 {
     font-size: 2.1rem;
     margin: 0 0 0.4rem 0;
@@ -52,7 +49,7 @@ header.hero {
     font-size: 1.05rem;
     opacity: 0.92;
     margin: 0 0 1.4rem 0;
-    max-width: 60ch;
+    max-width: 62ch;
 }
 .hero .cta {
     display: inline-block;
@@ -77,11 +74,7 @@ header.hero {
     vertical-align: middle;
 }
 
-main {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
-}
+main { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 
 section { margin-bottom: 2.8rem; }
 
@@ -93,14 +86,34 @@ h2 {
     margin: 0 0 1rem 0;
     font-weight: 600;
 }
-h3 {
-    font-size: 1.12rem;
-    color: var(--ink);
-    margin: 1.4rem 0 0.5rem 0;
-    font-weight: 600;
-}
+h3 { font-size: 1.12rem; color: var(--ink); margin: 1.4rem 0 0.5rem 0; font-weight: 600; }
 p { margin: 0.5rem 0 0.9rem; }
 p.lede { font-size: 1.05rem; color: var(--ink-soft); }
+
+.cmp-wrap { overflow-x: auto; margin: 1rem 0; }
+table.cmp {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 640px;
+    font-size: 0.92rem;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+}
+table.cmp th, table.cmp td {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+}
+table.cmp thead th {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+table.cmp tbody th { font-weight: 600; color: var(--ink); background: #f6f7f4; white-space: nowrap; }
+table.cmp tr:last-child td, table.cmp tr:last-child th { border-bottom: 0; }
 
 .layer-group {
     background: #fff;
@@ -109,13 +122,7 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     padding: 1rem 1.25rem;
     margin: 0.9rem 0;
 }
-.layer-group h3 {
-    margin-top: 0;
-    color: var(--accent-dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+.layer-group h3 { margin-top: 0; color: var(--accent-dark); display: flex; align-items: center; gap: 0.5rem; }
 .layer-group h3::before {
     content: "";
     display: inline-block;
@@ -124,15 +131,10 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     background: var(--accent);
     border-radius: 2px;
 }
-.layer {
-    padding: 0.55rem 0;
-    border-top: 1px solid var(--rule);
-}
+.layer-group .grp-note { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 0.6rem; }
+.layer { padding: 0.55rem 0; border-top: 1px solid var(--rule); }
 .layer:first-of-type { border-top: 0; padding-top: 0; }
-.layer .name {
-    font-weight: 600;
-    color: var(--ink);
-}
+.layer .name { font-weight: 600; color: var(--ink); }
 .layer .name .pill {
     display: inline-block;
     margin-left: 0.5rem;
@@ -146,14 +148,8 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     vertical-align: middle;
 }
 .layer .name .pill.sql { background: #e6eef7; color: #1565c0; }
-.layer .source {
-    color: var(--ink-soft);
-    font-size: 0.93rem;
-    margin: 0.1rem 0 0.15rem;
-}
-.layer .links {
-    font-size: 0.88rem;
-}
+.layer .source { color: var(--ink-soft); font-size: 0.93rem; margin: 0.1rem 0 0.15rem; }
+.layer .links { font-size: 0.88rem; }
 .layer .links a { margin-right: 0.9rem; }
 
 .callout {
@@ -194,10 +190,10 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 
 <header class="hero">
     <div class="hero-inner">
-        <h1>California SWAP 2025 Explorer
+        <h1>State Wildlife Action Plans Explorer
             <span class="badge">work in progress</span>
         </h1>
-        <p class="tag">An interactive map and AI assistant for exploring California's State Wildlife Action Plan (SWAP) 2025 — its conservation provinces and units, Species of Greatest Conservation Need, and the strategies and targets that guide their recovery.</p>
+        <p class="tag">An interactive map and AI assistant for comparing how different U.S. states plan for wildlife conservation — starting with California, Nevada, and Missouri. Each state's plan is kept in its own native structure, so you can see just how differently states approach the same mandate.</p>
         <a href="/" class="cta">← Open the App</a>
     </div>
 </header>
@@ -206,18 +202,41 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 
 <section>
     <h2>About this project</h2>
-    <p class="lede">An interactive interface to the <a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">California Department of Fish and Wildlife's State Wildlife Action Plan 2025</a>, built by the <a href="https://boettigerlab.berkeley.edu" target="_blank" rel="noopener">Boettiger Lab</a> in the <a href="https://espm.berkeley.edu" target="_blank" rel="noopener">Department of Environmental Science, Policy, and Management at UC Berkeley</a>.</p>
-    <p>State Wildlife Action Plans are the conservation blueprints every U.S. state maintains to keep species from becoming endangered. California's 2025 revision organizes the state into a nested geography of eight <strong>provinces</strong> and 46 <strong>conservation units</strong>, identifies the <strong>Species of Greatest Conservation Need (SGCN)</strong> in each, and lays out the <strong>conservation targets and strategies</strong> intended to sustain them. This app lets you browse those layers on a live map and ask natural-language questions that translate into SQL queries over the underlying data.</p>
-    <p>This is a <strong>work in progress</strong>. Layers, models, and capabilities are being added and refined.</p>
+    <p class="lede">A platform from the <a href="https://boettigerlab.berkeley.edu" target="_blank" rel="noopener">Boettiger Lab</a> in the <a href="https://espm.berkeley.edu" target="_blank" rel="noopener">Department of Environmental Science, Policy, and Management at UC Berkeley</a> for exploring State Wildlife Action Plans as cloud-native, queryable geospatial data.</p>
+    <p>Every U.S. state maintains a <strong>State Wildlife Action Plan (SWAP)</strong> — a conservation blueprint that identifies the species and habitats most in need of attention and the actions to sustain them — as a condition of federal wildlife funding. But the plans are authored independently, and they look nothing alike: different geographies, different species treatments, different vocabulary, even different names. This app brings several of them into one place <em>without flattening those differences</em>. Each state's layers stay distinct and are labeled by state, so a question like "how does California's approach compare to Missouri's?" becomes something you can actually see on the map.</p>
+    <p>This is a <strong>work in progress</strong>. States, layers, models, and capabilities are being added and refined.</p>
+</section>
+
+<section>
+    <h2>Three states, three very different plans</h2>
+    <p>The clearest way to appreciate the diversity is side by side. These three plans share almost none of their structure — which is exactly why each is kept separate in the app rather than merged into a single schema.</p>
+    <div class="cmp-wrap">
+    <table class="cmp">
+        <thead>
+            <tr><th>&nbsp;</th><th>California</th><th>Nevada</th><th>Missouri</th></tr>
+        </thead>
+        <tbody>
+            <tr><th>Plan</th><td>SWAP 2025 (CDFW)</td><td>SWAP 2022 (NDOW)</td><td>CCS 2022 (MDC) — a <em>Comprehensive Conservation Strategy</em>, not called a "SWAP"</td></tr>
+            <tr><th>Model</th><td>Rich <strong>relational</strong> plan</td><td>Flat, <strong>species-centric</strong></td><td><strong>Habitat / place</strong> only</td></tr>
+            <tr><th>Conservation geography</th><td>8 provinces → 46 conservation units; marine bioregions; salmonid ESU/DPS; Bay-Delta unit</td><td>17 statewide Key Habitat classes</td><td>7 habitat-system Conservation Opportunity Areas + 11 Priority Geographies</td></tr>
+            <tr><th>Species</th><td>SGCN list (1,437) + range polygons (422) + species × unit crosswalk (4,268)</td><td>258 species-distribution polygons</td><td><em>none</em> — no species data in the plan</td></tr>
+            <tr><th>Planning tables</th><td>Conservation Targets (460) &amp; Strategies (525)</td><td>—</td><td>—</td></tr>
+            <tr><th>Taxon grouping</th><td>7 groups (Amphibians, Birds, Fish, Invertebrates, Mammals, Plants, Reptiles)</td><td>4 groups (Bird, Reptile, Mammal, Aquatic)</td><td>—</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="callout">
+        <strong>Compare them yourself.</strong> The plans do not share a common species key or habitat classification, so cross-state comparison is done explicitly — ask the assistant for, say, "California SGCN species" and "Nevada species distributions" and line them up. Missouri intentionally has no species layer to compare; its plan works entirely through habitat and place.
+    </div>
 </section>
 
 <section>
     <h2>How it works</h2>
-    <p>The map renders open geospatial datasets directly from cloud-native formats (PMTiles vector tiles and GeoParquet) hosted on the <a href="https://nrp.ai" target="_blank" rel="noopener">National Research Platform</a>. No tile server is involved — your browser fetches only the bytes it needs to render the current view.</p>
-    <p>The AI assistant translates plain-English questions into SQL using <a href="https://duckdb.org" target="_blank" rel="noopener">DuckDB</a> over the same Parquet files, with column schemas and dataset descriptions discovered automatically through a <a href="https://stacspec.org" target="_blank" rel="noopener">SpatioTemporal Asset Catalog (STAC)</a>. This is how it can answer questions about the SGCN species list, conservation targets, and strategies — planning tables that have no map geometry of their own.</p>
+    <p>The map renders open geospatial datasets directly from cloud-native formats (PMTiles vector tiles, Cloud-Optimized GeoTIFFs, and GeoParquet) hosted on the <a href="https://nrp.ai" target="_blank" rel="noopener">National Research Platform</a>. No tile server is involved — your browser fetches only the bytes it needs to render the current view.</p>
+    <p>The AI assistant translates plain-English questions into SQL using <a href="https://duckdb.org" target="_blank" rel="noopener">DuckDB</a> over the same Parquet files, with column schemas and dataset descriptions discovered automatically through a <a href="https://stacspec.org" target="_blank" rel="noopener">SpatioTemporal Asset Catalog (STAC)</a>. This is how it can answer questions about California's SGCN species list, targets, and strategies — planning tables that have no map geometry of their own.</p>
 
     <div class="callout">
-        <strong>Low-carbon, open models.</strong> The assistant is powered by open-weight large language models (GLM, Qwen3, GPT-OSS 120B, Kimi K2, MiniMax) running on the <strong>NRP open-llm-proxy</strong>, a shared university inference service running on hardware powered substantially by renewable energy. Compared to large commercial inference services, this approach reduces both the energy and the data-privacy footprint of every conversation. Carbon and energy use are tracked on our companion <a href="https://carbon-dashboard.nrp-nautilus.io" target="_blank" rel="noopener">sustainability dashboard</a>.
+        <strong>Low-carbon, open models.</strong> The assistant is powered by open-weight large language models (GLM, Qwen3, GPT-OSS 120B, Kimi K2, MiniMax) running on the <strong>NRP open-llm-proxy</strong>, a shared university inference service running on hardware powered substantially by renewable energy. Compared to large commercial inference services, this reduces both the energy and the data-privacy footprint of every conversation. Carbon and energy use are tracked on our companion <a href="https://carbon-dashboard.nrp-nautilus.io" target="_blank" rel="noopener">sustainability dashboard</a>.
     </div>
 
     <p>The full agent stack — map, chat, MCP tool server, and STAC catalog — is open-source. See the <a href="https://github.com/boettiger-lab/swap" target="_blank" rel="noopener">project repository</a> and the <a href="https://github.com/boettiger-lab/geo-agent" target="_blank" rel="noopener">geo-agent core library</a>.</p>
@@ -230,89 +249,97 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     </div>
     <p>A few of the actions people most often ask for:</p>
     <ul>
-        <li><strong>Adjust layer styling and transparency:</strong> <em>"Make the SGCN ranges 40% transparent"</em>, <em>"Color the conservation units by type"</em>, <em>"Outline the provinces in black."</em></li>
-        <li><strong>Show, hide, or filter layers:</strong> <em>"Turn on the salmonid ESU/DPS units and hide the provinces"</em>, <em>"Show only bird ranges"</em>, <em>"Filter the ESU/DPS layer to habitat that is anthropogenically blocked."</em></li>
-        <li><strong>Zoom and pan:</strong> <em>"Zoom to the South Coast province"</em>, <em>"Center the map on the Bay-Delta."</em></li>
-        <li><strong>Query the planning tables:</strong> <em>"Which taxonomic group has the most SGCN species?"</em>, <em>"List the conservation strategies for the Central Valley and Sierra Nevada province."</em></li>
-        <li><strong>Combine layers in an analysis:</strong> <em>"How many SGCN species have ranges overlapping the Deserts province?"</em> — the assistant writes the spatial SQL and shows the result.</li>
+        <li><strong>Compare states:</strong> <em>"Show California's SWAP provinces and Nevada's key habitats"</em>, <em>"How do California, Nevada, and Missouri each define conservation geographies?"</em></li>
+        <li><strong>Adjust styling and transparency:</strong> <em>"Make Missouri's forest COAs 40% transparent"</em>, <em>"Color the California SGCN ranges by taxonomic group."</em></li>
+        <li><strong>Show, hide, or filter layers:</strong> <em>"Turn on Nevada species distributions and hide California"</em>, <em>"Show only bird ranges in Nevada."</em></li>
+        <li><strong>Zoom and pan:</strong> <em>"Zoom to Missouri"</em>, <em>"Center on the California South Coast province."</em></li>
+        <li><strong>Query &amp; combine:</strong> <em>"How many SGCN species by taxonomic group in California vs Nevada?"</em>, <em>"Overlay PAD-US GAP 1–2 lands on California's SGCN ranges."</em></li>
     </ul>
-    <p>And a few interface tips that aren't visually obvious:</p>
+    <p>A few interface tips that aren't visually obvious:</p>
     <ul>
-        <li>The Data Assistant panel is <strong>resizable</strong> — drag its left edge to give chat more or less width.</li>
-        <li>Use the header button to <strong>minimize</strong> the panel; a floating "show" button restores it.</li>
+        <li>The Data Assistant panel is <strong>resizable</strong> — drag its left edge; the header button <strong>minimizes</strong> it, and a floating button restores it.</li>
         <li>On phones and tablets, the panel auto-collapses to overlay mode so the full map stays visible.</li>
-        <li>PMTiles layers show a legend for their color categories. <strong>Hover</strong> over any feature for a tooltip with that feature's live attributes — names, categories, IDs — direct from the source data.</li>
-        <li>Every tool call the assistant runs is logged in the per-turn timeline — with timings — so you can see what it queried, with what arguments, and what came back.</li>
+        <li><strong>Hover</strong> over any feature for a tooltip of its live attributes — names, classes, IDs — direct from the source data.</li>
+        <li>Every tool call the assistant runs is logged in the per-turn timeline, with timings, so you can see what it queried and what came back.</li>
     </ul>
 </section>
 
 <section>
     <h2>Data layers &amp; sources</h2>
-    <p>Every layer draws from the California SWAP 2025 release, published by CDFW under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a> license and reprocessed into cloud-native formats by the Boettiger Lab. Click "STAC" beside any entry for the full machine-readable metadata — schemas, column descriptions, license, lineage, and download URLs. Entries marked <span class="layer"><span class="name" style="font-weight:400"><span class="pill sql">SQL</span></span></span> are tabular planning data the assistant can query but that are not drawn as map layers.</p>
+    <p>Each state plan is a public release from its wildlife agency, reprocessed into cloud-native formats by the Boettiger Lab. Click "STAC" beside any entry for the full machine-readable metadata — schemas, column descriptions, license, and download URLs. Entries marked <span class="pill sql" style="font-size:0.72rem;padding:0.05rem 0.45rem;border-radius:999px;">SQL</span> are tabular planning data the assistant can query but that are not drawn as map layers.</p>
 
     <div class="layer-group">
-        <h3>SWAP Regions</h3>
+        <h3>California — SWAP 2025 (CDFW)</h3>
+        <p class="grp-note">A nested, relational plan: regions, species, and planning tables. Data © California Department of Fish and Wildlife, CC-BY-4.0.</p>
         <div class="layer">
-            <div class="name">Provinces <span class="pill">8 features</span></div>
-            <div class="source">The eight statewide analysis regions of SWAP 2025. The 2025 revision adds an <em>Anadromous</em> province relative to the seven regions in SWAP 2015. <code>ProvinceID</code> is the join key to the conservation units.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Provinces &amp; Conservation Units <span class="pill">8 + 46</span></div>
+            <div class="source">Eight statewide provinces subdivided into 46 conservation units (terrestrial, freshwater, marine, anadromous), plus marine bioregions, NOAA salmonid ESU/DPS units, and the Bay-Delta unit.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json" target="_blank" rel="noopener">STAC: Provinces</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json" target="_blank" rel="noopener">STAC: Units</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">Conservation Units <span class="pill">46 features</span></div>
-            <div class="source">Polygons subdividing the provinces into terrestrial ecoregions and freshwater, marine, and anadromous units. Each unit references its parent province via <code>ParentProvinceID</code>, and the targets and strategies tables reference units by name.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">SGCN Species &amp; Ranges <span class="pill">1,437 species · 422 ranges</span></div>
+            <div class="source">Species of Greatest Conservation Need across all seven taxonomic groups (only the five vertebrate groups have mapped ranges), with a species × conservation-unit crosswalk (4,268 rows).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json" target="_blank" rel="noopener">STAC: Ranges</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species/stac-collection.json" target="_blank" rel="noopener">STAC: Species list</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">Bay-Delta Conservation Unit <span class="pill">1 feature</span></div>
-            <div class="source">The single Sacramento–San Joaquin Bay-Delta unit polygon from the SWAP 2025 reference geographies.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/bay-delta-conservation-unit/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Conservation Targets &amp; Strategies <span class="pill">460 · 525</span> <span class="pill sql">SQL</span></div>
+            <div class="source">The habitat/species targets per conservation unit (typed Terrestrial / Freshwater Aquatic / Marine / Anadromous Species) and the conservation actions addressing each, grouped into eight strategy categories.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/targets/stac-collection.json" target="_blank" rel="noopener">STAC: Targets</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/strategies/stac-collection.json" target="_blank" rel="noopener">STAC: Strategies</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
     <div class="layer-group">
-        <h3>Species of Greatest Conservation Need</h3>
+        <h3>Nevada — SWAP 2022 (NDOW)</h3>
+        <p class="grp-note">A flat, species-centric plan: species ranges and habitat classes, no nested regions or planning tables. Data © Nevada Department of Wildlife, CC-BY-4.0.</p>
         <div class="layer">
-            <div class="name">SGCN Species Ranges (v4) <span class="pill">422 ranges</span></div>
-            <div class="source">Range polygons for the SGCN vertebrates — amphibians, birds, fish, mammals, and reptiles. Each range links to the SGCN species list via <code>ParentSpeciesKey</code>, and traces to a source CDFW BIOS dataset.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Species Distributions <span class="pill">258 features</span></div>
+            <div class="source">Per-species range polygons for Nevada's Species of Greatest Conservation Need, grouped as Bird, Reptile, Mammal, or Aquatic (fish and amphibians), with a seasonal occupancy attribute.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-nevada/swap-2022/species-distributions/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.ndow.org/species/state-wildlife-action-plan/" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">SGCN Species List <span class="pill">1,437 species</span> <span class="pill sql">SQL</span></div>
-            <div class="source">The full list of Species of Greatest Conservation Need in SWAP 2025, spanning all seven taxonomic groups — amphibians, birds, fish, invertebrates, mammals, plants, and reptiles (only the five vertebrate groups have mapped ranges). Each row carries the species' listing status, SGCN status, and a climate-vulnerability indicator. <code>SpeciesKey</code> is the join key to the range polygons and the species × unit crosswalk.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
-        </div>
-        <div class="layer">
-            <div class="name">SGCN × Conservation Unit <span class="pill">4,268 rows</span> <span class="pill sql">SQL</span></div>
-            <div class="source">Crosswalk recording which conservation units each SGCN species occurs in — the basis for "which species are in this unit / which units hold this species" questions. <code>ParentProvSpeciesKey</code> joins to the species list's <code>SpeciesKey</code>; <code>ConUnit</code> names the conservation unit.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species-units/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Key Habitats <span class="pill">17 classes</span></div>
+            <div class="source">Seventeen statewide key-habitat classes — from Alpine and Tundra to Mojave Warm Desert to Salt Desert Shrub — the habitat framework Nevada's plan is organized around.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-nevada/swap-2022/key-habitats/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.ndow.org/species/state-wildlife-action-plan/" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
     <div class="layer-group">
-        <h3>Marine &amp; Anadromous</h3>
+        <h3>Missouri — CCS 2022 (MDC)</h3>
+        <p class="grp-note">A habitat/place-based plan with no species layer: Conservation Opportunity Areas by habitat system, plus landscape-scale priority geographies. Data © Missouri Department of Conservation, CC-BY-4.0.</p>
         <div class="layer">
-            <div class="name">Salmonid ESU / DPS (NOAA) <span class="pill">37 features</span></div>
-            <div class="source">NOAA Evolutionarily Significant Units and Distinct Population Segments for anadromous salmonids, classified by habitat accessibility (accessible, naturally blocked, anthropogenically blocked, likely extirpated) and ESA listing status.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/noaa-esu-dps/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.fisheries.noaa.gov/west-coast/endangered-species-conservation/west-coast-salmon-steelhead-listings" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Conservation Opportunity Areas (COAs) <span class="pill">7 habitat systems</span></div>
+            <div class="source">Priority areas by habitat system: Grassland/Prairie/Savanna, Forest/Woodland, Glade, Cave/Karst, Wetland, and Stream Reach (aquatic line features). Each COA is a named place identified for focused conservation.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-missouri/ccs-2022/grassland-prairie-savanna-coa/stac-collection.json" target="_blank" rel="noopener">STAC: Grassland</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-missouri/ccs-2022/forest-woodland-coa/stac-collection.json" target="_blank" rel="noopener">STAC: Forest</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-missouri/ccs-2022/stream-reach-coa/stac-collection.json" target="_blank" rel="noopener">STAC: Stream</a><a href="https://mdc.mo.gov" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">Marine Bioregions <span class="pill">3 features</span></div>
-            <div class="source">Three polygons partitioning California's marine waters, from the SWAP 2025 marine reference layers.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/marine-bioregions/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Priority Geographies <span class="pill">11 features</span></div>
+            <div class="source">Landscape-scale conservation priorities that sit above the individual COAs in Missouri's strategy.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-missouri/ccs-2022/priority-geographies/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://mdc.mo.gov" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
     <div class="layer-group">
-        <h3>Conservation Planning Tables</h3>
+        <h3>National context layers</h3>
+        <p class="grp-note">US-wide reference data for overlaying on any state's plan.</p>
         <div class="layer">
-            <div class="name">Conservation Targets <span class="pill">460 targets</span> <span class="pill sql">SQL</span></div>
-            <div class="source">The habitats and species systems SWAP 2025 identifies for conservation action, one set per conservation unit and typed as Terrestrial, Freshwater Aquatic, Marine, or Anadromous Species. Joins to the conservation units by name (<code>ConsUnit</code>); each target's <code>TargetID</code> is referenced by the strategies table.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/targets/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">PAD-US 4.1 — Fee Lands &amp; Easements</div>
+            <div class="source">USGS Protected Areas Database of the United States. Fee lands and conservation easements, colored by GAP status (1 = managed for biodiversity → 4 = no known mandate).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json" target="_blank" rel="noopener">STAC: Fee</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/easement/stac-collection.json" target="_blank" rel="noopener">STAC: Easement</a><a href="https://www.usgs.gov/programs/gap-analysis-project/science/protected-areas" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">Conservation Strategies <span class="pill">525 actions</span> <span class="pill sql">SQL</span></div>
-            <div class="source">The conservation actions SWAP 2025 proposes to sustain its targets — each tied to the threat it addresses and grouped into strategy categories (Direct Management, Partner Engagement, Data Collection and Analysis, Law and Policy, Land Use Planning, Environmental Review, Outreach and Education, Management Planning). Joins to the targets via <code>ParentTargetID</code> → <code>TargetID</code>.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/swap-2025/strategies/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">NLCD 2024 Land Cover</div>
+            <div class="source">Annual National Land Cover Database 2024, 30 m, conterminous US (MRLC / USGS).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-land-cover/nlcd-2024/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.mrlc.gov" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Social Vulnerability Index (SVI 2022, census tracts)</div>
+            <div class="source">CDC / ATSDR census-tract vulnerability composite from 16 census variables (overall percentile ranking).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.atsdr.cdc.gov/place-health/php/svi/" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">US Census Administrative Boundaries</div>
+            <div class="source">TIGER/Line — states, counties, 119th-Congress congressional districts (2024), and state legislative districts, upper and lower chambers (2025).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json" target="_blank" rel="noopener">STAC: State</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json" target="_blank" rel="noopener">STAC: County</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json" target="_blank" rel="noopener">STAC: Congressional</a><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
@@ -322,9 +349,11 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 <div class="foot">
     <div class="partners">
         <span>UC Berkeley</span>
-        <span>California Department of Fish and Wildlife</span>
+        <span>CDFW</span>
+        <span>NDOW</span>
+        <span>Missouri Dept. of Conservation</span>
     </div>
-    <div>Built by the <a href="https://github.com/boettiger-lab" target="_blank" rel="noopener">Boettiger Lab</a> at UC Berkeley · Data © CDFW, CC-BY-4.0 · <a href="https://github.com/boettiger-lab/swap" target="_blank" rel="noopener">Source on GitHub</a></div>
+    <div>Built by the <a href="https://github.com/boettiger-lab" target="_blank" rel="noopener">Boettiger Lab</a> at UC Berkeley · State plan data © respective agencies, CC-BY-4.0 · <a href="https://github.com/boettiger-lab/swap" target="_blank" rel="noopener">Source on GitHub</a></div>
     <div style="margin-top:0.4rem;">A work in progress — feedback welcome via <a href="https://github.com/boettiger-lab/swap/issues" target="_blank" rel="noopener">GitHub issues</a>.</div>
 </div>
 

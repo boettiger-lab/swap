@@ -17,18 +17,18 @@
     },
     "view": {
         "center": [
-            -119.2,
-            37.3
+            -98,
+            39
         ],
-        "zoom": 5.4
+        "zoom": 4
     },
     "welcome": {
-        "message": "Hi! I can help you explore California's State Wildlife Action Plan (SWAP) 2025 — the CDFW conservation framework of provinces, conservation units, Species of Greatest Conservation Need (SGCN), and the strategies and targets that guide their recovery. Try asking:",
+        "message": "Hi! I explore State Wildlife Action Plans across California, Nevada, and Missouri — three states that structure conservation very differently. Each state's layers are kept separate (e.g. \"CA SGCN species\" vs \"Nevada species distributions\" vs \"Missouri COAs\") so you can see and compare their approaches. National context layers (protected areas, land cover, administrative boundaries, social vulnerability) are available too. Try asking:",
         "examples": [
-            "Show the SWAP provinces, then outline the conservation units on top.",
-            "Which taxonomic group has the most SGCN species?",
-            "Map the SGCN ranges colored by taxonomic group and zoom to the South Coast.",
-            "Which conservation units fall in the Central Valley and Sierra Nevada province?"
+            "Show California's SWAP provinces and Nevada's key habitats.",
+            "How do California, Nevada, and Missouri each define their conservation geographies?",
+            "Turn on Missouri's Conservation Opportunity Areas.",
+            "Compare the number of SGCN species by taxonomic group in California vs Nevada."
         ]
     },
     "links": {
@@ -43,8 +43,8 @@
             "assets": [
                 {
                     "id": "provinces-pmtiles",
-                    "display_name": "Provinces",
-                    "group": "SWAP Regions",
+                    "display_name": "CA · Provinces",
+                    "group": "California SWAP 2025 — Regions",
                     "visible": true,
                     "default_style": {
                         "fill-color": [
@@ -88,8 +88,8 @@
             "assets": [
                 {
                     "id": "conservation-units-pmtiles",
-                    "display_name": "Conservation Units",
-                    "group": "SWAP Regions",
+                    "display_name": "CA · Conservation Units",
+                    "group": "California SWAP 2025 — Regions",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -125,8 +125,8 @@
             "assets": [
                 {
                     "id": "bay-delta-conservation-unit-pmtiles",
-                    "display_name": "Bay-Delta Conservation Unit",
-                    "group": "SWAP Regions",
+                    "display_name": "CA · Bay-Delta Conservation Unit",
+                    "group": "California SWAP 2025 — Regions",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#7B3294",
@@ -147,8 +147,8 @@
             "assets": [
                 {
                     "id": "sgcn-ranges-pmtiles",
-                    "display_name": "SGCN Species Ranges",
-                    "group": "Species of Greatest Conservation Need",
+                    "display_name": "CA · SGCN Species Ranges",
+                    "group": "California SWAP 2025 — Species (SGCN)",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -186,8 +186,8 @@
             "assets": [
                 {
                     "id": "noaa-esu-dps-pmtiles",
-                    "display_name": "Salmonid ESU / DPS (NOAA)",
-                    "group": "Marine & Anadromous",
+                    "display_name": "CA · Salmonid ESU / DPS (NOAA)",
+                    "group": "California SWAP 2025 — Marine & Anadromous",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -224,8 +224,8 @@
             "assets": [
                 {
                     "id": "marine-bioregions-pmtiles",
-                    "display_name": "Marine Bioregions",
-                    "group": "Marine & Anadromous",
+                    "display_name": "CA · Marine Bioregions",
+                    "group": "California SWAP 2025 — Marine & Anadromous",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#238B45",
@@ -237,6 +237,445 @@
                         "line-opacity": 0.7
                     },
                     "tooltip_fields": ["Name"]
+                }
+            ]
+        },
+        {
+            "collection_id": "nevada-swap-2022-key-habitats",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-nevada/swap-2022/key-habitats/stac-collection.json",
+            "assets": [
+                {
+                    "id": "key-habitats-pmtiles",
+                    "display_name": "NV · Key Habitats",
+                    "group": "Nevada SWAP 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "KEYHABCLAS"],
+                            "Alpine and Tundra", "#9E9AC8",
+                            "Aspen Woodland", "#74C476",
+                            "Desert Grasslands", "#FDD0A2",
+                            "High Elevation Sagebrush Dominated Shrublands", "#6BAED6",
+                            "Lakes and Reservoirs", "#08519C",
+                            "Low Elevation Sagebrush Dominated Shrubland", "#9ECAE1",
+                            "Lower Montane Woodlands and Chaparral", "#A1D99B",
+                            "Mojave Mid-Elevation Mixed Desert Shrub", "#FDAE6B",
+                            "Mojave Warm Desert", "#E6550D",
+                            "Montane Shrublands", "#31A354",
+                            "Perennial Rivers and Streams", "#3182BD",
+                            "Pinyon-Juniper Woodland", "#006D2C",
+                            "Riparian and Wetland", "#41B6C4",
+                            "Salt Desert Shrub", "#FEE391",
+                            "Sparsely Vegetated Habitats", "#D9D9D9",
+                            "Springs", "#4292C6",
+                            "Upper Montane Coniferous Forest and Woodland", "#00441B",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#525252",
+                        "line-width": 0.3,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": ["KEYHABCLAS", "Area_in_Acres"]
+                }
+            ]
+        },
+        {
+            "collection_id": "nevada-swap-2022-species-distributions",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-nevada/swap-2022/species-distributions/stac-collection.json",
+            "assets": [
+                {
+                    "id": "species-distributions-pmtiles",
+                    "display_name": "NV · Species Distributions (SGCN)",
+                    "group": "Nevada SWAP 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "Major_Group"],
+                            "Bird", "#FC8D62",
+                            "Mammal", "#E78AC3",
+                            "Reptile", "#A6D854",
+                            "Aquatic", "#8DA0CB",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.3,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": ["Common_Name", "Scientific_Name", "Major_Group", "Occupancy"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "Bird", "color": "#FC8D62" },
+                        { "label": "Mammal", "color": "#E78AC3" },
+                        { "label": "Reptile", "color": "#A6D854" },
+                        { "label": "Aquatic (fish & amphibians)", "color": "#8DA0CB" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-priority-geographies",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/priority-geographies/stac-collection.json",
+            "assets": [
+                {
+                    "id": "priority-geographies-pmtiles",
+                    "display_name": "MO · Priority Geographies",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#B71C1C",
+                        "fill-opacity": 0.1
+                    },
+                    "outline_style": {
+                        "line-color": "#B71C1C",
+                        "line-width": 1.4,
+                        "line-opacity": 0.85
+                    },
+                    "tooltip_fields": ["NAME", "GIS_Acres"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-grassland-prairie-savanna-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/grassland-prairie-savanna-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "grassland-prairie-savanna-coa-pmtiles",
+                    "display_name": "MO · Grassland / Prairie / Savanna COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#DAA520",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#8D6708",
+                        "line-width": 0.4,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["NAME"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-forest-woodland-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/forest-woodland-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "forest-woodland-coa-pmtiles",
+                    "display_name": "MO · Forest / Woodland COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#2E7D32",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#1B5E20",
+                        "line-width": 0.4,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["NAME"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-glade-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/glade-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "glade-coa-pmtiles",
+                    "display_name": "MO · Glade COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#E67E22",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#A85410",
+                        "line-width": 0.4,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["NAME"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-cave-karst-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/cave-karst-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "cave-karst-coa-pmtiles",
+                    "display_name": "MO · Cave / Karst COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A5ACD",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#453C87",
+                        "line-width": 0.4,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["Name"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-wetland-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/wetland-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "wetland-coa-pmtiles",
+                    "display_name": "MO · Wetland COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#17A2B8",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#0E6B7A",
+                        "line-width": 0.4,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["Name"]
+                }
+            ]
+        },
+        {
+            "collection_id": "missouri-ccs-2022-stream-reach-coa",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/stream-reach-coa/stac-collection.json",
+            "assets": [
+                {
+                    "id": "stream-reach-coa-pmtiles",
+                    "display_name": "MO · Stream Reach COAs",
+                    "group": "Missouri CCS 2022",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#1E88E5",
+                        "line-width": 1.1,
+                        "line-opacity": 0.85
+                    },
+                    "tooltip_fields": ["NAME"]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://minio.carlboettiger.info/public-padus/padus-4-1/fee/stac-collection.json",
+            "assets": [
+                {
+                    "id": "fee-pmtiles",
+                    "display_name": "PAD-US Fee Lands (by GAP status)",
+                    "group": "Protected Areas (US)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "GAP_Sts"],
+                            "1", "#26633A",
+                            "2", "#3E9C47",
+                            "3", "#7EB3D3",
+                            "4", "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "GAP 1 — managed for biodiversity", "color": "#26633A" },
+                        { "label": "GAP 2 — managed, some extractive use", "color": "#3E9C47" },
+                        { "label": "GAP 3 — multiple use", "color": "#7EB3D3" },
+                        { "label": "GAP 4 — no known mandate", "color": "#BDBDBD" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-easement",
+            "collection_url": "https://minio.carlboettiger.info/public-padus/padus-4-1/easement/stac-collection.json",
+            "assets": [
+                {
+                    "id": "easement-pmtiles",
+                    "display_name": "PAD-US Conservation Easements",
+                    "group": "Protected Areas (US)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "GAP_Sts"],
+                            "1", "#26633A",
+                            "2", "#3E9C47",
+                            "3", "#7EB3D3",
+                            "4", "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"]
+                }
+            ]
+        },
+        {
+            "collection_id": "nlcd-2024",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd-2024/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nlcd-2024-cog",
+                    "display_name": "NLCD 2024 Land Cover",
+                    "group": "Land Cover",
+                    "visible": false,
+                    "legend_type": "categorical",
+                    "paint": {
+                        "raster-opacity": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "svi-2022",
+            "collection_url": "https://minio.carlboettiger.info/public-social-vulnerability/2022/stac-collection.json",
+            "assets": [
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "Social Vulnerability (SVI 2022, census tracts)",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "interpolate", ["linear"], ["get", "RPL_THEMES"],
+                            0,   "#ffffcc",
+                            0.5, "#fd8d3c",
+                            1,   "#bd0026"
+                        ],
+                        "fill-opacity": 0.75
+                    },
+                    "default_filter": [">=", ["get", "RPL_THEMES"], 0],
+                    "tooltip_fields": ["COUNTY", "ST_ABBR", "RPL_THEMES"],
+                    "legend_type": "continuous",
+                    "legend_label": "SVI percentile"
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-state",
+            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/state/stac-collection.json",
+            "group": { "name": "Administrative Boundaries", "collapsed": true },
+            "assets": [
+                {
+                    "id": "state-pmtiles",
+                    "display_name": "States (US Census)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.8,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": ["NAME", "STUSPS", "GEOID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-county",
+            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/county/stac-collection.json",
+            "group": { "name": "Administrative Boundaries", "collapsed": true },
+            "assets": [
+                {
+                    "id": "county-pmtiles",
+                    "display_name": "Counties (US Census)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.4,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-cd",
+            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/cd/stac-collection.json",
+            "group": { "name": "Administrative Boundaries", "collapsed": true },
+            "assets": [
+                {
+                    "id": "cd-pmtiles",
+                    "display_name": "Congressional Districts (119th)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#00796B",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#00796B",
+                        "line-width": 0.8,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2025-sldu",
+            "collection_url": "https://minio.carlboettiger.info/public-census/census-2025/sldu/stac-collection.json",
+            "group": { "name": "Administrative Boundaries", "collapsed": true },
+            "assets": [
+                {
+                    "id": "sldu-pmtiles",
+                    "display_name": "State Legislative — Upper (Senate)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#00897B",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#00897B",
+                        "line-width": 0.5,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2025-sldl",
+            "collection_url": "https://minio.carlboettiger.info/public-census/census-2025/sldl/stac-collection.json",
+            "group": { "name": "Administrative Boundaries", "collapsed": true },
+            "assets": [
+                {
+                    "id": "sldl-pmtiles",
+                    "display_name": "State Legislative — Lower (House)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#26A69A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#26A69A",
+                        "line-width": 0.35,
+                        "line-opacity": 0.55
+                    },
+                    "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
                 }
             ]
         }

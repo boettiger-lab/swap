@@ -1,7 +1,17 @@
-# AI Agent Guide — swap (California SWAP 2025)
+# AI Agent Guide — swap (State Wildlife Action Plans Explorer)
 
-A geo-agent map app for **California's State Wildlife Action Plan (SWAP) 2025** (CDFW).
-Created from [boettiger-lab/geo-agent-template](https://github.com/boettiger-lab/geo-agent-template).
+A geo-agent map app comparing **U.S. State Wildlife Action Plans** across states — currently
+**California SWAP 2025** (CDFW), **Nevada SWAP 2022** (NDOW), and **Missouri CCS 2022** (MDC) —
+plus US-wide context layers. Created from
+[boettiger-lab/geo-agent-template](https://github.com/boettiger-lab/geo-agent-template).
+
+> **Federated, not unified.** The three state plans have deliberately different structures
+> (CA is relational with species + planning tables; NV is species-ranges + key-habitats;
+> MO is habitat-only Conservation Opportunity Areas with *no* species data and is a "CCS,"
+> not a "SWAP"). Layers are grouped and labeled by state (`display_name` prefixed `CA ·`/`NV ·`/`MO ·`)
+> and kept in their native schemas — do **not** merge them into one schema. See `system-prompt.md`
+> for the per-state vocabulary map the agent relies on. Note Missouri's inconsistent name-column
+> casing (`NAME` vs `Name`) across COA layers — tooltips are matched per-layer.
 
 ## Deployment model: public repo, git-clone initContainer
 
@@ -24,29 +34,48 @@ template — **not** website content.
 
 ## The data
 
-California SWAP 2025 is published by CDFW under CC-BY-4.0 and reprocessed by the Boettiger Lab.
-The suite lives under the `swap-2025-*` STAC collections (bucket `public-cdfw/swap-2025/`):
+All state plans are public agency releases (CC-BY-4.0) reprocessed by the Boettiger Lab. Each state's
+collections are children of a state parent collection (`cdfw-datasets`, `nevada-datasets`,
+`missouri-datasets`) — **not** the root catalog — so each entry in `layers-input.json` sets an explicit
+`collection_url` to the sub-collection JSON to bypass root-catalog traversal.
+
+**California — SWAP 2025 (CDFW)**, bucket `public-cdfw/swap-2025/`:
 
 | Collection | Map layer | Notes |
 |---|---|---|
-| `swap-2025-provinces` | ✅ Provinces (fill) | 8 analysis regions |
-| `swap-2025-conservation-units` | ✅ Conservation Units | 46 units; `ParentProvinceID` → Provinces `ProvinceID` |
+| `swap-2025-provinces` | ✅ | 8 analysis regions |
+| `swap-2025-conservation-units` | ✅ | 46 units; `ParentProvinceID` → Provinces `ProvinceID` |
 | `swap-2025-bay-delta-conservation-unit` | ✅ | single Bay-Delta polygon |
-| `swap-2025-sgcn-ranges` | ✅ SGCN ranges | 422 species range polygons |
-| `swap-2025-noaa-esu-dps` | ✅ Salmonid ESU/DPS | 37 anadromous units |
+| `swap-2025-sgcn-ranges` | ✅ | 422 vertebrate range polygons |
+| `swap-2025-noaa-esu-dps` | ✅ | 37 salmonid ESU/DPS units |
 | `swap-2025-marine-bioregions` | ✅ | 3 marine polygons |
-| `swap-2025-sgcn-species` | — (SQL) | SGCN species list; `SpeciesKey` ← ranges `ParentSpeciesKey` |
-| `swap-2025-sgcn-species-units` | — (SQL) | SGCN × Conservation Unit crosswalk |
-| `swap-2025-targets` | — (SQL) | Conservation Targets (reference units by `Name`) |
-| `swap-2025-strategies` | — (SQL) | Conservation Strategies (reference units by `Name`) |
+| `swap-2025-sgcn-species` | — (SQL) | 1,437 SGCN species; `SpeciesKey` ← ranges `ParentSpeciesKey` |
+| `swap-2025-sgcn-species-units` | — (SQL) | 4,268-row species × unit crosswalk (`ParentProvSpeciesKey`) |
+| `swap-2025-targets` | — (SQL) | 460 Conservation Targets (join units by name `ConsUnit`) |
+| `swap-2025-strategies` | — (SQL) | 525 Strategies (`ParentTargetID` → `TargetID`) |
 
-These are children of the `cdfw-datasets` parent collection, not of the root catalog, so each entry
-in `layers-input.json` sets an explicit `collection_url` (pointing at the sub-collection JSON) to
-bypass root-catalog traversal.
+**Nevada — SWAP 2022 (NDOW)**, bucket `public-nevada/swap-2022/`:
+
+| Collection | Map layer | Notes |
+|---|---|---|
+| `nevada-swap-2022-species-distributions` | ✅ | 258 SGCN range polygons; `Major_Group` = Bird/Reptile/Mammal/Aquatic |
+| `nevada-swap-2022-key-habitats` | ✅ | 17 `KEYHABCLAS` habitat classes |
+
+**Missouri — CCS 2022 (MDC)**, bucket `public-missouri/ccs-2022/` — *habitat only, no species data*:
+
+| Collection | Map layer | Notes |
+|---|---|---|
+| `missouri-ccs-2022-{grassland-prairie-savanna,forest-woodland,glade,cave-karst,wetland}-coa` | ✅ | COAs by habitat system; name col `NAME` **or** `Name` (varies) |
+| `missouri-ccs-2022-stream-reach-coa` | ✅ | aquatic COAs — **line** features (`layer_type: "line"`) |
+| `missouri-ccs-2022-priority-geographies` | ✅ | 11 landscape priorities; `NAME`, `GIS_Acres` |
+
+**National context** (reused, proven): `pad-us-4.1-fee`, `pad-us-4.1-easement` (GAP-status colored),
+`nlcd-2024` (categorical COG), `svi-2022` (tract-pmtiles), and `census-2024-{state,county,cd}` /
+`census-2025-{sldu,sldl}` (collapsed "Administrative Boundaries" group).
 
 > **Hex caveat:** each polygon layer has an H3 hex variant where one row = one (feature, cell) pair.
-> `Shape__Area` / `Shape__Length` repeat on every cell — never `SUM` them on hex. `_cng_fid` / `h8` / `h0`
-> are the safe keys. This is documented in each STAC collection description (`get_schema`).
+> `Shape__Area` / `Shape__Length` (Missouri: `Shape.STArea()`) repeat on every cell — never `SUM` them
+> on hex. `_cng_fid` / `h8` / `h0` are the safe keys. Documented in each STAC description (`get_schema`).
 
 ## Deployment
 
