@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: swap
+  namespace: biodiversity
+  labels:
+    app: swap
+spec:
+  type: ClusterIP
+  selector:
+    app: swap
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http

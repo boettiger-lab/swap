@@ -1,0 +1,244 @@
+{
+    "catalog": "https://minio.carlboettiger.info/public-data/stac/catalog.json",
+    "titiler_url": "https://titiler.nrp-nautilus.io",
+    "mcp_url": "https://dev-duckdb-mcp.nrp-nautilus.io/mcp",
+    "auto_approve": true,
+    "geocoder": {
+        "provider": "nominatim",
+        "search_box": true
+    },
+    "geolocate": {
+        "button": true,
+        "agent_tool": true
+    },
+    "sidebar": {
+        "enabled": true,
+        "chat_title": "Chat"
+    },
+    "view": {
+        "center": [
+            -119.2,
+            37.3
+        ],
+        "zoom": 5.4
+    },
+    "welcome": {
+        "message": "Hi! I can help you explore California's State Wildlife Action Plan (SWAP) 2025 — the CDFW conservation framework of provinces, conservation units, Species of Greatest Conservation Need (SGCN), and the strategies and targets that guide their recovery. Try asking:",
+        "examples": [
+            "Show the SWAP provinces, then outline the conservation units on top.",
+            "Which taxonomic group has the most SGCN species?",
+            "Map the SGCN ranges colored by taxonomic group and zoom to the South Coast.",
+            "Which conservation units fall in the Central Valley and Sierra Nevada province?"
+        ]
+    },
+    "links": {
+        "github": "https://github.com/boettiger-lab/swap",
+        "docs": "https://boettiger-lab.github.io/geo-agent/",
+        "carbon": true
+    },
+    "collections": [
+        {
+            "collection_id": "swap-2025-provinces",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json",
+            "assets": [
+                {
+                    "id": "provinces-pmtiles",
+                    "display_name": "Provinces",
+                    "group": "SWAP Regions",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "Province"],
+                            "North Coast and Klamath", "#1B7837",
+                            "Cascades and Modoc Plateau", "#5AAE61",
+                            "Central Valley and Sierra Nevada Province", "#D9EF8B",
+                            "Bay Delta and Central Coast", "#66C2A5",
+                            "South Coast", "#FDB863",
+                            "Deserts", "#E08214",
+                            "Anadromous", "#4393C3",
+                            "Marine", "#2166AC",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#333333",
+                        "line-width": 1.0,
+                        "line-opacity": 0.8
+                    },
+                    "tooltip_fields": ["Province", "ProvinceID"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "North Coast and Klamath", "color": "#1B7837" },
+                        { "label": "Cascades and Modoc Plateau", "color": "#5AAE61" },
+                        { "label": "Central Valley and Sierra Nevada", "color": "#D9EF8B" },
+                        { "label": "Bay Delta and Central Coast", "color": "#66C2A5" },
+                        { "label": "South Coast", "color": "#FDB863" },
+                        { "label": "Deserts", "color": "#E08214" },
+                        { "label": "Anadromous", "color": "#4393C3" },
+                        { "label": "Marine", "color": "#2166AC" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-conservation-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json",
+            "assets": [
+                {
+                    "id": "conservation-units-pmtiles",
+                    "display_name": "Conservation Units",
+                    "group": "SWAP Regions",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "ConsUnitType"],
+                            "Terrestrial", "#8C6D31",
+                            "Freshwater Aquatic", "#3182BD",
+                            "Marine", "#08519C",
+                            "Anadromous", "#41B6C4",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#4D4D4D",
+                        "line-width": 0.7,
+                        "line-opacity": 0.75
+                    },
+                    "tooltip_fields": ["Name", "ConsUnitType", "ParentProvinceID"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "Terrestrial", "color": "#8C6D31" },
+                        { "label": "Freshwater Aquatic", "color": "#3182BD" },
+                        { "label": "Marine", "color": "#08519C" },
+                        { "label": "Anadromous", "color": "#41B6C4" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-bay-delta-conservation-unit",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/bay-delta-conservation-unit/stac-collection.json",
+            "assets": [
+                {
+                    "id": "bay-delta-conservation-unit-pmtiles",
+                    "display_name": "Bay-Delta Conservation Unit",
+                    "group": "SWAP Regions",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#7B3294",
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#4A148C",
+                        "line-width": 1.0,
+                        "line-opacity": 0.8
+                    },
+                    "tooltip_fields": ["Bay_Delta"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-sgcn-ranges",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json",
+            "assets": [
+                {
+                    "id": "sgcn-ranges-pmtiles",
+                    "display_name": "SGCN Species Ranges",
+                    "group": "Species of Greatest Conservation Need",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "Taxonomic_Group"],
+                            "Amphibians", "#66C2A5",
+                            "Birds", "#FC8D62",
+                            "Fish", "#8DA0CB",
+                            "Mammals", "#E78AC3",
+                            "Reptiles", "#A6D854",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.3,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": ["SWAP_Common", "SWAP_Scientific", "Taxonomic_Group"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "Amphibians", "color": "#66C2A5" },
+                        { "label": "Birds", "color": "#FC8D62" },
+                        { "label": "Fish", "color": "#8DA0CB" },
+                        { "label": "Mammals", "color": "#E78AC3" },
+                        { "label": "Reptiles", "color": "#A6D854" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-noaa-esu-dps",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/noaa-esu-dps/stac-collection.json",
+            "assets": [
+                {
+                    "id": "noaa-esu-dps-pmtiles",
+                    "display_name": "Salmonid ESU / DPS (NOAA)",
+                    "group": "Marine & Anadromous",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            ["get", "Class"],
+                            "Accessible", "#2166AC",
+                            "Accessible - Likely Extirpated", "#F4A582",
+                            "Accessible-Likely Extirpated", "#F4A582",
+                            "Naturally Blocked", "#B2ABD2",
+                            "Historical Watershed: Anthropogenically Blocked", "#B2182B",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#333333",
+                        "line-width": 0.4,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": ["ESU_DPS", "ESU_or_DPS", "Class", "Status"],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        { "label": "Accessible", "color": "#2166AC" },
+                        { "label": "Accessible — likely extirpated", "color": "#F4A582" },
+                        { "label": "Naturally blocked", "color": "#B2ABD2" },
+                        { "label": "Anthropogenically blocked", "color": "#B2182B" }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-marine-bioregions",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/marine-bioregions/stac-collection.json",
+            "assets": [
+                {
+                    "id": "marine-bioregions-pmtiles",
+                    "display_name": "Marine Bioregions",
+                    "group": "Marine & Anadromous",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#238B45",
+                        "fill-opacity": 0.25
+                    },
+                    "outline_style": {
+                        "line-color": "#00441B",
+                        "line-width": 0.8,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": ["Name"]
+                }
+            ]
+        }
+    ]
+}
