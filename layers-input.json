@@ -39,7 +39,7 @@
     "collections": [
         {
             "collection_id": "swap-2025-provinces",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/provinces/stac-collection.json",
             "assets": [
                 {
                     "id": "provinces-pmtiles",
@@ -84,7 +84,7 @@
         },
         {
             "collection_id": "swap-2025-conservation-units",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/conservation-units/stac-collection.json",
             "assets": [
                 {
                     "id": "conservation-units-pmtiles",
@@ -121,7 +121,7 @@
         },
         {
             "collection_id": "swap-2025-bay-delta-conservation-unit",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/bay-delta-conservation-unit/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/bay-delta-conservation-unit/stac-collection.json",
             "assets": [
                 {
                     "id": "bay-delta-conservation-unit-pmtiles",
@@ -143,7 +143,7 @@
         },
         {
             "collection_id": "swap-2025-sgcn-ranges",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-ranges/stac-collection.json",
             "assets": [
                 {
                     "id": "sgcn-ranges-pmtiles",
@@ -182,7 +182,7 @@
         },
         {
             "collection_id": "swap-2025-noaa-esu-dps",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/noaa-esu-dps/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/noaa-esu-dps/stac-collection.json",
             "assets": [
                 {
                     "id": "noaa-esu-dps-pmtiles",
@@ -220,7 +220,7 @@
         },
         {
             "collection_id": "swap-2025-marine-bioregions",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/marine-bioregions/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/marine-bioregions/stac-collection.json",
             "assets": [
                 {
                     "id": "marine-bioregions-pmtiles",
@@ -242,7 +242,7 @@
         },
         {
             "collection_id": "nevada-swap-2022-key-habitats",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-nevada/swap-2022/key-habitats/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/nevada/swap-2022/key-habitats/stac-collection.json",
             "assets": [
                 {
                     "id": "key-habitats-pmtiles",
@@ -285,7 +285,7 @@
         },
         {
             "collection_id": "nevada-swap-2022-species-distributions",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-nevada/swap-2022/species-distributions/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/nevada/swap-2022/species-distributions/stac-collection.json",
             "assets": [
                 {
                     "id": "species-distributions-pmtiles",
@@ -322,7 +322,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-priority-geographies",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/priority-geographies/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/priority-geographies/stac-collection.json",
             "assets": [
                 {
                     "id": "priority-geographies-pmtiles",
@@ -344,7 +344,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-grassland-prairie-savanna-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/grassland-prairie-savanna-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/grassland-prairie-savanna-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "grassland-prairie-savanna-coa-pmtiles",
@@ -366,7 +366,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-forest-woodland-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/forest-woodland-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/forest-woodland-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "forest-woodland-coa-pmtiles",
@@ -388,7 +388,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-glade-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/glade-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/glade-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "glade-coa-pmtiles",
@@ -410,7 +410,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-cave-karst-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/cave-karst-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/cave-karst-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "cave-karst-coa-pmtiles",
@@ -432,7 +432,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-wetland-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/wetland-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/wetland-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "wetland-coa-pmtiles",
@@ -454,7 +454,7 @@
         },
         {
             "collection_id": "missouri-ccs-2022-stream-reach-coa",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-missouri/ccs-2022/stream-reach-coa/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/missouri/ccs-2022/stream-reach-coa/stac-collection.json",
             "assets": [
                 {
                     "id": "stream-reach-coa-pmtiles",
