@@ -45,7 +45,7 @@ data-workflows issues **#381** (CA SWAP 2025), **#383** (NV SWAP 2022), **#384**
 > data as CC-BY. Sources: NV → [NDOW ArcGIS Data Hub](https://nevada-department-of-wildlife-data-hub-ndow.hub.arcgis.com/);
 > MO → MDC ArcGIS `gisblue.mdc.mo.gov/.../CCS/MapServer` + the [2022 CCS PDF](https://mdc.mo.gov/sites/default/files/2022-04/2022-Missouri-CCS.pdf).
 
-**California — SWAP 2025 (CDFW)**, bucket `public-cdfw/swap-2025/`:
+**California — SWAP 2025 (CDFW)**, bucket `public-swap/california/swap-2025/`:
 
 | Collection | Map layer | Notes |
 |---|---|---|
@@ -60,14 +60,14 @@ data-workflows issues **#381** (CA SWAP 2025), **#383** (NV SWAP 2022), **#384**
 | `swap-2025-targets` | — (SQL) | 460 Conservation Targets (join units by name `ConsUnit`) |
 | `swap-2025-strategies` | — (SQL) | 525 Strategies (`ParentTargetID` → `TargetID`) |
 
-**Nevada — SWAP 2022 (NDOW)**, bucket `public-nevada/swap-2022/`:
+**Nevada — SWAP 2022 (NDOW)**, bucket `public-swap/nevada/swap-2022/`:
 
 | Collection | Map layer | Notes |
 |---|---|---|
 | `nevada-swap-2022-species-distributions` | ✅ | 258 SGCN range polygons; `Major_Group` = Bird/Reptile/Mammal/Aquatic |
 | `nevada-swap-2022-key-habitats` | ✅ | 17 `KEYHABCLAS` habitat classes |
 
-**Missouri — CCS 2022 (MDC)**, bucket `public-missouri/ccs-2022/` — *habitat only, no species data*:
+**Missouri — CCS 2022 (MDC)**, bucket `public-swap/missouri/ccs-2022/` — *habitat only, no species data*:
 
 | Collection | Map layer | Notes |
 |---|---|---|
