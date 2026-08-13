@@ -1,5 +1,5 @@
 {
-    "catalog": "https://minio.carlboettiger.info/public-data/stac/catalog.json",
+    "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
     "titiler_url": "https://titiler.nrp-nautilus.io",
     "mcp_url": "https://dev-duckdb-mcp.nrp-nautilus.io/mcp",
     "auto_approve": true,
@@ -473,7 +473,7 @@
         },
         {
             "collection_id": "pad-us-4.1-fee",
-            "collection_url": "https://minio.carlboettiger.info/public-padus/padus-4-1/fee/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "assets": [
                 {
                     "id": "fee-pmtiles",
@@ -505,7 +505,7 @@
         },
         {
             "collection_id": "pad-us-4.1-easement",
-            "collection_url": "https://minio.carlboettiger.info/public-padus/padus-4-1/easement/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/easement/stac-collection.json",
             "assets": [
                 {
                     "id": "easement-pmtiles",
@@ -529,11 +529,11 @@
             ]
         },
         {
-            "collection_id": "nlcd-2024",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd-2024/stac-collection.json",
+            "collection_id": "nlcd",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/stac-collection.json",
             "assets": [
                 {
-                    "id": "nlcd-2024-cog",
+                    "id": "nlcd-cog-2024",
                     "display_name": "NLCD 2024 Land Cover",
                     "group": "Land Cover",
                     "visible": false,
@@ -588,7 +588,7 @@
         },
         {
             "collection_id": "svi-2022",
-            "collection_url": "https://minio.carlboettiger.info/public-social-vulnerability/2022/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
             "assets": [
                 {
                     "id": "tract-pmtiles",
@@ -613,7 +613,7 @@
         },
         {
             "collection_id": "census-2024-state",
-            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/state/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json",
             "group": { "name": "Administrative Boundaries", "collapsed": true },
             "assets": [
                 {
@@ -635,7 +635,7 @@
         },
         {
             "collection_id": "census-2024-county",
-            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/county/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
             "group": { "name": "Administrative Boundaries", "collapsed": true },
             "assets": [
                 {
@@ -657,7 +657,7 @@
         },
         {
             "collection_id": "census-2024-cd",
-            "collection_url": "https://minio.carlboettiger.info/public-census/census-2024/cd/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json",
             "group": { "name": "Administrative Boundaries", "collapsed": true },
             "assets": [
                 {
@@ -679,7 +679,7 @@
         },
         {
             "collection_id": "census-2025-sldu",
-            "collection_url": "https://minio.carlboettiger.info/public-census/census-2025/sldu/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json",
             "group": { "name": "Administrative Boundaries", "collapsed": true },
             "assets": [
                 {
@@ -701,7 +701,7 @@
         },
         {
             "collection_id": "census-2025-sldl",
-            "collection_url": "https://minio.carlboettiger.info/public-census/census-2025/sldl/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json",
             "group": { "name": "Administrative Boundaries", "collapsed": true },
             "assets": [
                 {
