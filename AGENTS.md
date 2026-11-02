@@ -30,7 +30,7 @@ template — **not** website content.
 
 **You do not write JavaScript.** Core modules are loaded from the CDN pin in `index.html`.
 
-**Full docs:** [boettiger-lab.github.io/geo-agent/docs](https://boettiger-lab.github.io/geo-agent/docs/)
+**Full docs:** [schmidtdse.github.io/glen/](https://schmidtdse.github.io/glen/)
 
 ## The data
 
@@ -114,7 +114,7 @@ The `open-llm-proxy-secrets` secret (key `proxy-key`) must already exist in the 
 `index.html` pins the geo-agent library version. Verify jsDelivr serves a new tag before deploying:
 
 ```bash
-curl -sI https://cdn.jsdelivr.net/gh/boettiger-lab/geo-agent@vX.Y.Z/app/style.css | grep HTTP
+curl -sI https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@vX.Y.Z/app/style.css | grep HTTP
 # Must return HTTP/2 200 — a 404 means jsDelivr hasn't indexed the tag yet
 ```
 
@@ -122,4 +122,4 @@ curl -sI https://cdn.jsdelivr.net/gh/boettiger-lab/geo-agent@vX.Y.Z/app/style.cs
 
 For the full `layers-input.json` schema, troubleshooting, and configuration reference see the
 [geo-agent-template AGENTS.md](https://github.com/boettiger-lab/geo-agent-template/blob/main/AGENTS.md)
-or the [docs](https://boettiger-lab.github.io/geo-agent/docs/).
+or the [docs](https://schmidtdse.github.io/glen/).

@@ -16,7 +16,7 @@ Each state's layers are kept in their **native structure** and labeled by state 
 (PAD-US protected areas, NLCD land cover, SVI social vulnerability, Census boundaries) overlay any state.
 
 Ask questions in plain language; the app uses an LLM agent with map tools and SQL access. Built on the
-[geo-agent](https://github.com/boettiger-lab/geo-agent) framework — the map, chat, and agent modules
+[geo-agent](https://github.com/SchmidtDSE/glen) framework — the map, chat, and agent modules
 are loaded from CDN, so there is no JavaScript to write here.
 
 ## Configuration
