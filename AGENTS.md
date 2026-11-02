@@ -3,7 +3,7 @@
 A geo-agent map app comparing **U.S. State Wildlife Action Plans** across states — currently
 **California SWAP 2025** (CDFW), **Nevada SWAP 2022** (NDOW), and **Missouri CCS 2022** (MDC) —
 plus US-wide context layers. Created from
-[boettiger-lab/geo-agent-template](https://github.com/boettiger-lab/geo-agent-template).
+[SchmidtDSE/glen-template](https://github.com/SchmidtDSE/glen-template).
 
 > **Federated, not unified.** The three state plans have deliberately different structures
 > (CA is relational with species + planning tables; NV is species-ranges + key-habitats;
@@ -121,5 +121,5 @@ curl -sI https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@vX.Y.Z/app/style.css | grep
 ---
 
 For the full `layers-input.json` schema, troubleshooting, and configuration reference see the
-[geo-agent-template AGENTS.md](https://github.com/boettiger-lab/geo-agent-template/blob/main/AGENTS.md)
+[glen-template AGENTS.md](https://github.com/SchmidtDSE/glen-template/blob/main/AGENTS.md)
 or the [docs](https://schmidtdse.github.io/glen/).
