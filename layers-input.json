@@ -46,39 +46,7 @@
                     "display_name": "CA · Provinces",
                     "group": "California SWAP 2025 — Regions",
                     "visible": true,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "Province"],
-                            "North Coast and Klamath", "#1B7837",
-                            "Cascades and Modoc Plateau", "#5AAE61",
-                            "Central Valley and Sierra Nevada Province", "#D9EF8B",
-                            "Bay Delta and Central Coast", "#66C2A5",
-                            "South Coast", "#FDB863",
-                            "Deserts", "#E08214",
-                            "Anadromous", "#4393C3",
-                            "Marine", "#2166AC",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#333333",
-                        "line-width": 1.0,
-                        "line-opacity": 0.8
-                    },
-                    "tooltip_fields": ["Province", "ProvinceID"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "North Coast and Klamath", "color": "#1B7837" },
-                        { "label": "Cascades and Modoc Plateau", "color": "#5AAE61" },
-                        { "label": "Central Valley and Sierra Nevada", "color": "#D9EF8B" },
-                        { "label": "Bay Delta and Central Coast", "color": "#66C2A5" },
-                        { "label": "South Coast", "color": "#FDB863" },
-                        { "label": "Deserts", "color": "#E08214" },
-                        { "label": "Anadromous", "color": "#4393C3" },
-                        { "label": "Marine", "color": "#2166AC" }
-                    ]
+                    "tooltip_fields": ["Province", "ProvinceID"]
                 }
             ]
         },
@@ -91,31 +59,7 @@
                     "display_name": "CA · Conservation Units",
                     "group": "California SWAP 2025 — Regions",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "ConsUnitType"],
-                            "Terrestrial", "#8C6D31",
-                            "Freshwater Aquatic", "#3182BD",
-                            "Marine", "#08519C",
-                            "Anadromous", "#41B6C4",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#4D4D4D",
-                        "line-width": 0.7,
-                        "line-opacity": 0.75
-                    },
-                    "tooltip_fields": ["Name", "ConsUnitType", "ParentProvinceID"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "Terrestrial", "color": "#8C6D31" },
-                        { "label": "Freshwater Aquatic", "color": "#3182BD" },
-                        { "label": "Marine", "color": "#08519C" },
-                        { "label": "Anadromous", "color": "#41B6C4" }
-                    ]
+                    "tooltip_fields": ["Name", "ConsUnitType", "ParentProvinceID"]
                 }
             ]
         },
@@ -128,15 +72,6 @@
                     "display_name": "CA · Bay-Delta Conservation Unit",
                     "group": "California SWAP 2025 — Regions",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#7B3294",
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#4A148C",
-                        "line-width": 1.0,
-                        "line-opacity": 0.8
-                    },
                     "tooltip_fields": ["Bay_Delta"]
                 }
             ]
@@ -150,33 +85,7 @@
                     "display_name": "CA · SGCN Species Ranges",
                     "group": "California SWAP 2025 — Species (SGCN)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "Taxonomic_Group"],
-                            "Amphibians", "#66C2A5",
-                            "Birds", "#FC8D62",
-                            "Fish", "#8DA0CB",
-                            "Mammals", "#E78AC3",
-                            "Reptiles", "#A6D854",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.3
-                    },
-                    "outline_style": {
-                        "line-color": "#555555",
-                        "line-width": 0.3,
-                        "line-opacity": 0.5
-                    },
-                    "tooltip_fields": ["SWAP_Common", "SWAP_Scientific", "Taxonomic_Group"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "Amphibians", "color": "#66C2A5" },
-                        { "label": "Birds", "color": "#FC8D62" },
-                        { "label": "Fish", "color": "#8DA0CB" },
-                        { "label": "Mammals", "color": "#E78AC3" },
-                        { "label": "Reptiles", "color": "#A6D854" }
-                    ]
+                    "tooltip_fields": ["SWAP_Common", "SWAP_Scientific", "Taxonomic_Group"]
                 }
             ]
         },
@@ -189,32 +98,7 @@
                     "display_name": "CA · Salmonid ESU / DPS (NOAA)",
                     "group": "California SWAP 2025 — Marine & Anadromous",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "Class"],
-                            "Accessible", "#2166AC",
-                            "Accessible - Likely Extirpated", "#F4A582",
-                            "Accessible-Likely Extirpated", "#F4A582",
-                            "Naturally Blocked", "#B2ABD2",
-                            "Historical Watershed: Anthropogenically Blocked", "#B2182B",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.5
-                    },
-                    "outline_style": {
-                        "line-color": "#333333",
-                        "line-width": 0.4,
-                        "line-opacity": 0.6
-                    },
-                    "tooltip_fields": ["ESU_DPS", "ESU_or_DPS", "Class", "Status"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "Accessible", "color": "#2166AC" },
-                        { "label": "Accessible — likely extirpated", "color": "#F4A582" },
-                        { "label": "Naturally blocked", "color": "#B2ABD2" },
-                        { "label": "Anthropogenically blocked", "color": "#B2182B" }
-                    ]
+                    "tooltip_fields": ["ESU_DPS", "ESU_or_DPS", "Class", "Status"]
                 }
             ]
         },
@@ -227,15 +111,6 @@
                     "display_name": "CA · Marine Bioregions",
                     "group": "California SWAP 2025 — Marine & Anadromous",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#238B45",
-                        "fill-opacity": 0.25
-                    },
-                    "outline_style": {
-                        "line-color": "#00441B",
-                        "line-width": 0.8,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["Name"]
                 }
             ]
@@ -249,36 +124,6 @@
                     "display_name": "NV · Key Habitats",
                     "group": "Nevada SWAP 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "KEYHABCLAS"],
-                            "Alpine and Tundra", "#9E9AC8",
-                            "Aspen Woodland", "#74C476",
-                            "Desert Grasslands", "#FDD0A2",
-                            "High Elevation Sagebrush Dominated Shrublands", "#6BAED6",
-                            "Lakes and Reservoirs", "#08519C",
-                            "Low Elevation Sagebrush Dominated Shrubland", "#9ECAE1",
-                            "Lower Montane Woodlands and Chaparral", "#A1D99B",
-                            "Mojave Mid-Elevation Mixed Desert Shrub", "#FDAE6B",
-                            "Mojave Warm Desert", "#E6550D",
-                            "Montane Shrublands", "#31A354",
-                            "Perennial Rivers and Streams", "#3182BD",
-                            "Pinyon-Juniper Woodland", "#006D2C",
-                            "Riparian and Wetland", "#41B6C4",
-                            "Salt Desert Shrub", "#FEE391",
-                            "Sparsely Vegetated Habitats", "#D9D9D9",
-                            "Springs", "#4292C6",
-                            "Upper Montane Coniferous Forest and Woodland", "#00441B",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#525252",
-                        "line-width": 0.3,
-                        "line-opacity": 0.5
-                    },
                     "tooltip_fields": ["KEYHABCLAS", "Area_in_Acres"]
                 }
             ]
@@ -292,31 +137,7 @@
                     "display_name": "NV · Species Distributions (SGCN)",
                     "group": "Nevada SWAP 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "Major_Group"],
-                            "Bird", "#FC8D62",
-                            "Mammal", "#E78AC3",
-                            "Reptile", "#A6D854",
-                            "Aquatic", "#8DA0CB",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.3
-                    },
-                    "outline_style": {
-                        "line-color": "#555555",
-                        "line-width": 0.3,
-                        "line-opacity": 0.5
-                    },
-                    "tooltip_fields": ["Common_Name", "Scientific_Name", "Major_Group", "Occupancy"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "Bird", "color": "#FC8D62" },
-                        { "label": "Mammal", "color": "#E78AC3" },
-                        { "label": "Reptile", "color": "#A6D854" },
-                        { "label": "Aquatic (fish & amphibians)", "color": "#8DA0CB" }
-                    ]
+                    "tooltip_fields": ["Common_Name", "Scientific_Name", "Major_Group", "Occupancy"]
                 }
             ]
         },
@@ -329,15 +150,6 @@
                     "display_name": "MO · Priority Geographies",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#B71C1C",
-                        "fill-opacity": 0.1
-                    },
-                    "outline_style": {
-                        "line-color": "#B71C1C",
-                        "line-width": 1.4,
-                        "line-opacity": 0.85
-                    },
                     "tooltip_fields": ["NAME", "GIS_Acres"]
                 }
             ]
@@ -351,15 +163,6 @@
                     "display_name": "MO · Grassland / Prairie / Savanna COAs",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#DAA520",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#8D6708",
-                        "line-width": 0.4,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["NAME"]
                 }
             ]
@@ -373,15 +176,6 @@
                     "display_name": "MO · Forest / Woodland COAs",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#2E7D32",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#1B5E20",
-                        "line-width": 0.4,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["NAME"]
                 }
             ]
@@ -395,15 +189,6 @@
                     "display_name": "MO · Glade COAs",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#E67E22",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#A85410",
-                        "line-width": 0.4,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["NAME"]
                 }
             ]
@@ -417,15 +202,6 @@
                     "display_name": "MO · Cave / Karst COAs",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A5ACD",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#453C87",
-                        "line-width": 0.4,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["Name"]
                 }
             ]
@@ -439,15 +215,6 @@
                     "display_name": "MO · Wetland COAs",
                     "group": "Missouri CCS 2022",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#17A2B8",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#0E6B7A",
-                        "line-width": 0.4,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["Name"]
                 }
             ]
@@ -462,11 +229,6 @@
                     "group": "Missouri CCS 2022",
                     "visible": false,
                     "layer_type": "line",
-                    "default_style": {
-                        "line-color": "#1E88E5",
-                        "line-width": 1.1,
-                        "line-opacity": 0.85
-                    },
                     "tooltip_fields": ["NAME"]
                 }
             ]
@@ -480,26 +242,7 @@
                     "display_name": "PAD-US Fee Lands (by GAP status)",
                     "group": "Protected Areas (US)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "GAP_Sts"],
-                            "1", "#26633A",
-                            "2", "#3E9C47",
-                            "3", "#7EB3D3",
-                            "4", "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.7
-                    },
-                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "GAP 1 — managed for biodiversity", "color": "#26633A" },
-                        { "label": "GAP 2 — managed, some extractive use", "color": "#3E9C47" },
-                        { "label": "GAP 3 — multiple use", "color": "#7EB3D3" },
-                        { "label": "GAP 4 — no known mandate", "color": "#BDBDBD" }
-                    ]
+                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"]
                 }
             ]
         },
@@ -512,18 +255,6 @@
                     "display_name": "PAD-US Conservation Easements",
                     "group": "Protected Areas (US)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "GAP_Sts"],
-                            "1", "#26633A",
-                            "2", "#3E9C47",
-                            "3", "#7EB3D3",
-                            "4", "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.7
-                    },
                     "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"]
                 }
             ]
@@ -553,36 +284,7 @@
                     "display_name": "Wetlands — National Wetlands Inventory (NWI)",
                     "group": "Wetlands (US)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            ["get", "WETLAND_TYPE"],
-                            "Freshwater Emergent Wetland", "#7FC31C",
-                            "Freshwater Forested/Shrub Wetland", "#008837",
-                            "Freshwater Pond", "#A6D96A",
-                            "Estuarine and Marine Wetland", "#66C2A5",
-                            "Estuarine and Marine Deepwater", "#000080",
-                            "Lake", "#2B6CB0",
-                            "Lakes", "#2B6CB0",
-                            "Riverine", "#4FC3E8",
-                            "RIverine", "#4FC3E8",
-                            "Other", "#BDBDBD",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.6
-                    },
-                    "tooltip_fields": ["WETLAND_TYPE", "ATTRIBUTE", "state_code"],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        { "label": "Freshwater Emergent Wetland", "color": "#7FC31C" },
-                        { "label": "Freshwater Forested/Shrub Wetland", "color": "#008837" },
-                        { "label": "Freshwater Pond", "color": "#A6D96A" },
-                        { "label": "Estuarine & Marine Wetland", "color": "#66C2A5" },
-                        { "label": "Estuarine & Marine Deepwater", "color": "#000080" },
-                        { "label": "Lake", "color": "#2B6CB0" },
-                        { "label": "Riverine", "color": "#4FC3E8" },
-                        { "label": "Other", "color": "#BDBDBD" }
-                    ]
+                    "tooltip_fields": ["WETLAND_TYPE", "ATTRIBUTE", "state_code"]
                 }
             ]
         },
@@ -595,19 +297,8 @@
                     "display_name": "Social Vulnerability (SVI 2022, census tracts)",
                     "group": "Social Vulnerability",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "interpolate", ["linear"], ["get", "RPL_THEMES"],
-                            0,   "#ffffcc",
-                            0.5, "#fd8d3c",
-                            1,   "#bd0026"
-                        ],
-                        "fill-opacity": 0.75
-                    },
                     "default_filter": [">=", ["get", "RPL_THEMES"], 0],
-                    "tooltip_fields": ["COUNTY", "ST_ABBR", "RPL_THEMES"],
-                    "legend_type": "continuous",
-                    "legend_label": "SVI percentile"
+                    "tooltip_fields": ["COUNTY", "ST_ABBR", "RPL_THEMES"]
                 }
             ]
         },
@@ -620,15 +311,6 @@
                     "id": "state-pmtiles",
                     "display_name": "States (US Census)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.8,
-                        "line-opacity": 0.6
-                    },
                     "tooltip_fields": ["NAME", "STUSPS", "GEOID"]
                 }
             ]
@@ -642,15 +324,6 @@
                     "id": "county-pmtiles",
                     "display_name": "Counties (US Census)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.4,
-                        "line-opacity": 0.5
-                    },
                     "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
                 }
             ]
@@ -664,15 +337,6 @@
                     "id": "cd-pmtiles",
                     "display_name": "Congressional Districts (119th)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#00796B",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#00796B",
-                        "line-width": 0.8,
-                        "line-opacity": 0.7
-                    },
                     "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
                 }
             ]
@@ -686,15 +350,6 @@
                     "id": "sldu-pmtiles",
                     "display_name": "State Legislative — Upper (Senate)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#00897B",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#00897B",
-                        "line-width": 0.5,
-                        "line-opacity": 0.6
-                    },
                     "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
                 }
             ]
@@ -708,15 +363,6 @@
                     "id": "sldl-pmtiles",
                     "display_name": "State Legislative — Lower (House)",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#26A69A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#26A69A",
-                        "line-width": 0.35,
-                        "line-opacity": 0.55
-                    },
                     "tooltip_fields": ["NAMELSAD", "STATEFP", "GEOID"]
                 }
             ]
