@@ -13,10 +13,10 @@ do not merge states into one answer without saying how they differ.
 
 - **California, SWAP 2025 (CDFW).** A relational plan with nested geography: 8
   provinces contain 46 conservation units, plus marine bioregions, NOAA salmonid ESU/DPS
-  units and a Bay-Delta unit. It has a list of about 1,437 Species of Greatest
-  Conservation Need (SGCN), 422 mapped vertebrate ranges, a species × conservation-unit
-  crosswalk, and two planning tables: 460 Conservation Targets and 525 Conservation
-  Strategies. The species list, crosswalk and planning tables have no geometry.
+  units and a Bay-Delta unit. Its 1,436 Species of Greatest Conservation Need (SGCN)
+  are one table of ranges, one record per species, 1,253 of them with a mapped range.
+  It has two planning tables with no geometry: 460 Conservation Targets and 525
+  Conservation Strategies.
 - **Nevada, SWAP 2022 (NDOW).** A flat plan of two layers: 258 SGCN species-distribution
   polygons (`Common_Name`, `Scientific_Name`, `Major_Group`, `Occupancy`) and 17
   statewide Key Habitat classes (`KEYHABCLAS`). It has no nested regions and no planning
@@ -37,7 +37,7 @@ The same idea goes by different names in each state:
 | Plan name | SWAP 2025 | SWAP 2022 | CCS 2022 |
 | Conservation geography | Provinces and conservation units | Key Habitats | Conservation Opportunity Areas and Priority Geographies |
 | Species of concern | SGCN species and ranges | Species distributions | None |
-| Taxon grouping | `Taxonomic_Group`: Amphibians, Birds, Fish, Invertebrates, Mammals, Plants, Reptiles | `Major_Group`: Bird, Reptile, Mammal, Aquatic (fish and amphibians together) | None |
+| Taxon grouping | `TaxGroup`: Amphibians, Birds, Fish, Invertebrates, Mammals, Plants, Reptiles | `Major_Group`: Bird, Reptile, Mammal, Aquatic (fish and amphibians together) | None |
 
 No species key or taxonomy is shared across states. A cross-state species comparison
 has to match on scientific or common name, account for the different taxon groupings,
@@ -46,9 +46,18 @@ and leave out Missouri.
 ## California joins
 
 - Conservation units to provinces: `ParentProvinceID` = `ProvinceID`.
-- SGCN ranges to the species list: `ParentSpeciesKey` = `SpeciesKey`.
-- Species × unit crosswalk to the species list: `ParentProvSpeciesKey` = `SpeciesKey`;
-  its `ConUnit` column names the unit.
+- SGCN species need no join: each range record carries the species' listing status
+  (`ListingStatus`), other designations (`ConsStatus`), climate vulnerability
+  (`ClimateVuln`), and its provinces and conservation units (`Province_CU`), as
+  comma-separated text. Filter `ListingStatus` and `ConsStatus` with `LIKE`.
+- `Province_CU` names only 19 of the 46 conservation units, all terrestrial ecoregions,
+  and drops the ` Ecoregion` suffix (`Mojave Desert` for `Mojave Desert Ecoregion`).
+  Marine bioregions, hydrologic units, salmonid ecoregions and the Bay-Delta unit never
+  appear in it. Match a unit as a whole list item, since one name can contain another
+  (`Central California Coast` is inside `Central California Coast Ranges`):
+  `regexp_matches(Province_CU, '[(,] *Central California Coast *[,)]')`, not `LIKE`.
+- Records with `Range = 'No Range'` hold a placeholder polygon in the Pacific, not a
+  range. Leave them out of spatial analysis.
 - Conservation Targets to conservation units by name: `targets.ConsUnit` =
   `conservation-units.Name`. There is no id to join on.
 - Conservation Strategies to Targets: `ParentTargetID` = `TargetID`. A strategy reaches
