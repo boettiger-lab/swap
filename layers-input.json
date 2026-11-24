@@ -92,7 +92,7 @@
           "tooltip_fields": [
             "SWAP_Common",
             "SWAP_Scientific",
-            "Taxonomic_Group"
+            "TaxGroup"
           ]
         }
       ]
