@@ -50,12 +50,18 @@ and leave out Missouri.
   (`ListingStatus`), other designations (`ConsStatus`), climate vulnerability
   (`ClimateVuln`), and its provinces and conservation units (`Province_CU`), as
   comma-separated text. Filter `ListingStatus` and `ConsStatus` with `LIKE`.
-- `Province_CU` names only 19 of the 46 conservation units, all terrestrial ecoregions,
-  and drops the ` Ecoregion` suffix (`Mojave Desert` for `Mojave Desert Ecoregion`).
-  Marine bioregions, hydrologic units, salmonid ecoregions and the Bay-Delta unit never
-  appear in it. Match a unit as a whole list item, since one name can contain another
-  (`Central California Coast` is inside `Central California Coast Ranges`):
-  `regexp_matches(Province_CU, '[(,] *Central California Coast *[,)]')`, not `LIKE`.
+- `Province_CU` is CDFW's text, in two forms: `Desert Province (Colorado Desert, Mojave
+  Desert); …`, or `Province not specified. Conservation Units: HUC 1802 Sacramento, …`.
+  948 records say `Province/Conservation Unit not available`. Its unit names are short
+  forms that do not equal `conservation-units.Name` (`Mojave Desert` for `Mojave Desert
+  Ecoregion`, `HUC 1802 Sacramento` for `HUC 1802 - Sacramento Hydrologic Unit`), and
+  `North Coast` alone could be the marine bioregion or the salmonid ecoregion. Match a
+  unit as a whole item, since one name can contain another (`Central California Coast`
+  is inside `Central California Coast Ranges`):
+  `regexp_matches(Province_CU, '(^|[(,:]) *Central California Coast *([,);]|$)')`.
+- 150 `Province_CU` values, mostly birds, are cut off at 255 characters, so a species
+  can occur in units its text leaves out. A match means the species is in the unit; no
+  match does not mean it is absent. Say so when counting species by unit.
 - Records with `Range = 'No Range'` hold a placeholder polygon in the Pacific, not a
   range. Leave them out of spatial analysis.
 - Conservation Targets to conservation units by name: `targets.ConsUnit` =
